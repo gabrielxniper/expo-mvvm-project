@@ -23,19 +23,22 @@ export const ItemView: React.FC = () => {
   };
 
   const renderItem = ({ item }: { item: Item }) => (
-    <View style={{ padding: 16, borderBottomWidth: 1, borderBottomColor: '#ccc' }}>
+    <View style={{
+      padding: 16, backgroundColor: '#fff8ba', marginTop: 5,
+      borderRadius: 20
+}}>
       <Text>{item.name}</Text>
     </View>
   );
 
   return (
-    <View style={{ flex: 1, padding: 16 }}>
+    <View style={{ flex: 1, padding: 16, backgroundColor: "#f7fc5d"}}>
       <TouchableOpacity
         onPress={() => viewModel.openDialog()}
         style={{
-          backgroundColor: '#007bff',
+          backgroundColor: '#004480',
           padding: 12,
-          borderRadius: 4,
+          borderRadius: 40,
           marginBottom: 16,
         }}
       >
@@ -53,15 +56,15 @@ export const ItemView: React.FC = () => {
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: 'rgba(0,0,0,0.5)',
+          backgroundColor: '#e9f294',
         }}>
           <View style={{
             width: 300,
             padding: 20,
-            backgroundColor: 'white',
-            borderRadius: 8,
+            backgroundColor: '#e7ffdb',
+            borderRadius: 40,
           }}>
-            <Text style={{ fontSize: 18, marginBottom: 16 }}>Adicionar Item</Text>
+            <Text style={{ fontSize: 18, marginBottom: 16}}>Adicionar Item</Text>
             
             <TextInput
               value={inputText}
@@ -69,24 +72,24 @@ export const ItemView: React.FC = () => {
               placeholder="Nome do item"
               style={{
                 borderWidth: 1,
-                borderColor: '#ccc',
+                borderColor: '#b3f294',
                 padding: 8,
                 marginBottom: 16,
-                borderRadius: 4,
+                borderRadius: 40,
               }}
             />
 
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
               <TouchableOpacity
                 onPress={() => viewModel.closeDialog()}
-                style={{ padding: 12, backgroundColor: '#ccc', borderRadius: 4, flex: 0.45 }}
+                style={{ padding: 12, backgroundColor: '#fa9191', borderRadius: 40, flex: 0.45 }}
               >
                 <Text style={{ textAlign: 'center' }}>Cancelar</Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                 onPress={handleAddItem}
-                style={{ padding: 12, backgroundColor: '#007bff', borderRadius: 4, flex: 0.45 }}
+                style={{ padding: 12, backgroundColor: '#004480', borderRadius: 40, flex: 0.45 }}
               >
                 <Text style={{ color: 'white', textAlign: 'center' }}>Adicionar</Text>
               </TouchableOpacity>
