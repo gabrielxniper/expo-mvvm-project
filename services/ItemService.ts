@@ -13,7 +13,7 @@ class ItemService {
   addItem(name: string): void {
     const nameTrim = name.trim();
     if(nameTrim.length <= 2){
-      throw new Error("O nome do item deve ter mais de 2 caracteres");
+      throw new Error("O nome do item não pode estar vazio e deve conter mais que 2 caracteres.");
     }
     const isCloned = this.items.some((item) => 
       item.name.toLowerCase() === nameTrim.toLowerCase()

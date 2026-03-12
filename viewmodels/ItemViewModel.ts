@@ -43,15 +43,11 @@ export class ItemViewModel {
     this.setItemsCallback?.(this._items);
   }
 
-  addItem(): boolean {
-    if (this._inputText.trim()) {
+  addItem(): void {
       ItemService.addItem(this._inputText.trim());
       this.loadItems();
       this.setInputText('');
       this.closeDialog();
-      return true;
-    }
-    return false;
   }
 
   openDialog(): void {
