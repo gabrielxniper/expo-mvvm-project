@@ -1,11 +1,26 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { StackNavigator } from './navigation/StackNavigator';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, View } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { ItemView } from './view/ItemView';
 
 export default function App() {
   return (
-    <NavigationContainer>
-        <StackNavigator />
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <SafeAreaView style={{ flex: 1 }}>
+        <View style={styles.container}>
+          <ItemView />
+        </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
+    
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    //backgroundColor: '',
+    //alignItems: 'center',
+    //justifyContent: 'center',
+  },
+});
